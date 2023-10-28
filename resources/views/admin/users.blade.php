@@ -50,16 +50,16 @@
           <td>{{$user->updated_at}}</td>          									
       
           <!--  編集ボタン -->
-          <td><form action="/admin/users/edit?id={{$user->id}}" method=post>
+          <td style="max-width:25px;"><form action="/admin/users/edit?id={{$user->id}}" method=post>
           <input type=hidden name=id value="{{$user->id}}">
-          <input type=submit class='button' value=編集> </form></td>
+          <input type=submit class='button' value=編集></form></td>
         
           <!-- 削除ボタン -->
-          <td><form action="{{ url('/admin/users/delete') }}" method=post name=del>
+          <td style="max-width:25px;"><form action="{{ url('/admin/users/delete') }}" method=post name=del>
               @method('DELETE')  
               @csrf 
           <input type=hidden name=id value="{{$user->id}}">
-          <input type=submit class='button' value=削除 onclick='return confirm("削除しますか")'> </form></td>
+          <input type=submit class='button' value=削除 onclick='return confirm("削除しますか")'></form></td>
         </tr>
         @endforeach
     </table>

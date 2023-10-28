@@ -39,7 +39,7 @@
       <div>
           <form action="{{ route('search.items') }}" method="GET">
           @csrf
-            <input type="text" name="keyword">
+            <input type="text" name="keyword" value="{{ $keyword }}">
             <input type="submit" value="検索">
           </form>
         </div>
@@ -49,7 +49,7 @@
         
           <div class="item_info" style="align-items: stretch;">
             <div class=item_pic><a href="{{ route('item.detail', ['id'=>$item->id]) }}"><img src="{{asset('img/items/'.$item->item_img)}}"></a></div>
-            <p>{{$item->name}}</p>
+            <p style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{$item->name}}</p>
             <p>{{number_format($item_price)}}円</p>									
         
             <!--  在庫:0の場合のボタンの分岐 -->

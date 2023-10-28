@@ -72,14 +72,13 @@
             <td>{{$order->created_at}}</td>
             <td>{{number_format($total_amount)}}円</td>
             <td>{{$Payment_method}}</td>
-            <td>{{$Payment_status}}</td>
-            <td>{{$Order_status}}</td>
-            <td>{{$Shipping_status}}</td>       									
+            <td style="width:100px;">{{$Payment_status}}</td>
+            <td style="width:100px;">{{$Order_status}}</td>
+            <td style="width:100px;">{{$Shipping_status}}</td>       									
         
             <!--  詳細ボタン -->
             
-            <td> 
-            <a class="back_btn"  href="{{ route('admin.orders.detail', ['id'=>$order->id]) }}">詳細</a>
+            <td style="max-width:15px;"><button onclick="location.href='{{ route('admin.orders.detail', ['id'=>$order->id]) }}'">詳細</button>
             <!-- <button class="back_btn" type="button" onclick="location.href='{{ route('admin.orders.detail', ['id'=>$order->id]) }}' ">詳細</button> -->
             </td>
 

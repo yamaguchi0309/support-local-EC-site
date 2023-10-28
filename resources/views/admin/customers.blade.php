@@ -66,12 +66,12 @@
           <td>{{$user->body}}</td>
       
           <!--  編集ボタン -->
-          <td><form action="/edit?id={{$user->id}}" method=post>
+          <td style="max-width:20px;"><form action="/edit?id={{$user->id}}" method=post>
           <input type=hidden name=id value="{{$user->id}}">
           <input type=submit class='button' value=編集> </form></td>
         
           <!-- 削除ボタン -->
-          <td><form action="{{ url('delete') }}" method=post name=del>
+          <td style="max-width:20px;"><form action="{{ url('delete') }}" method=post name=del>
               @method('DELETE')  
               @csrf 
           <input type=hidden name=id value="{{$user->id}}">

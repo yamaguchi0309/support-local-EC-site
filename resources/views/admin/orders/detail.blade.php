@@ -89,15 +89,15 @@
             @endphp
                        
             <tr>
-            <td>{{$order->id}}</td>
-            <td>{{$order->user_id}}</td>
+            <td style="width:50px;">{{$order->id}}</td>
+            <td style="width:50px;">{{$order->user_id}}</td>
             <td>{{$order->order_num}}</td>
             <td>{{$order->created_at}}</td>
             <td>{{number_format($total_amount)}}円</td>
             <td>{{$Payment_method}}</td>
-            <td>{{$Payment_status}}</td>
-            <td>{{$Order_status}}</td>
-            <td>{{$Shipping_status}}</td>
+            <td style="width:50px;">{{$Payment_status}}</td>
+            <td style="width:50px;">{{$Order_status}}</td>
+            <td style="width:50px;">{{$Shipping_status}}</td>
             <td>{{$order->updated_at}}</td></tr></table>  									
 
               <div class="block" style="display: block; width:100%">

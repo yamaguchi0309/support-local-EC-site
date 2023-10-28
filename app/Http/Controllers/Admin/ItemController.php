@@ -19,7 +19,7 @@ class ItemController extends Controller
         $item_data = $request->post();
         $item_data = $request->validate([
             'Name' => 'required',
-            'Description' => 'required|max:30',
+            'Description' => 'required|max:150',
             'Price' => 'required|integer',
             'Tax' => 'required',
             'Stock' => 'required|integer',
@@ -30,7 +30,7 @@ class ItemController extends Controller
        [
             'Name.required' => '商品名が未入力',
             'Description.required' => '商品説明が未入力',
-            'Description.max' => '商品説明は30文字以内',
+            'Description.max' => '商品説明は150文字以内',
             'Price.required' => '価格が未入力',
             'Price.integer' => '価格は数値入力',
             'Stock.required' => '在庫が未入力',
@@ -74,7 +74,7 @@ class ItemController extends Controller
         $item_data = $request->validate([
             'id'=> 'required',
             'Name' => 'required',
-            'Description' => 'required|max:30',
+            'Description' => 'required|max:150',
             'Price' => 'required|integer',
             'Tax' => 'required',
             'Stock' => 'required|integer',
@@ -86,7 +86,7 @@ class ItemController extends Controller
             'id.required' => 'IDがありません',
             'Name.required' => '商品名が未入力',
             'Description.required' => '商品説明が未入力',
-            'Description.max' => '商品説明は30文字以内',
+            'Description.max' => '商品説明は150文字以内',
             'Price.required' => '価格が未入力',
             'Price.integer' => '価格は数値入力',
             'Stock.required' => '在庫が未入力',

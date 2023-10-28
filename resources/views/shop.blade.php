@@ -33,8 +33,7 @@
         @include('header')
     </header>
    
-
-    <div class="main">
+    <div class="user_main">
         <p class="page_title">店舗情報</p>
         <div class="post">
             <div class="folm_msg">
@@ -43,37 +42,9 @@
             </div>
         </div>
        
-        <div class="post">
-            <div class="location">
-
-            
-        <?php
-            mb_language("Japanese");//文字コードの設定
-            mb_internal_encoding("UTF-8");
-
-            //住所を入れて緯度経度を求める。
-            $address = "佐世保市役所";
-            $myKey = "AIzaSyDMqI6BgNXJ3S_AME5qFZNd1i8yIWbj6Jw";
-
-            $address = urlencode($address);
-
-            $url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $address . "+CA&key=" . $myKey ;
-
-
-            $contents= file_get_contents($url);
-            $jsonData = json_decode($contents,true);
-
-            $lat = $jsonData["results"][0]["geometry"]["location"]["lat"];
-            $lng = $jsonData["results"][0]["geometry"]["location"]["lng"];
-            print("lat=$lat\n");
-            print("lng=$lng\n");
-        ?>
-        
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13357.220882752486!2d129.7152266!3d33.1798625!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356a943f3f167d2f%3A0x2ecc181a861e3a78!2z5L2Q5LiW5L-d5biC5b255omA!5e0!3m2!1sja!2sjp!4v1698317984695!5m2!1sja!2sjp" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
-                <a>google map</a>
-            </div>
+        <div class="post">   
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.737749644387!2d139.76382551109486!3d35.68345887247218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf91efa97d9%3A0x17b6702ba591fbf3!2z5Li444Gu5YaF44Kq44Ki44K-!5e0!3m2!1sja!2sjp!4v1698451783593!5m2!1sja!2sjp" 
+                    width="500" height="350" style="border:0; display:block; margin:15px auto;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     
         <div class="post">

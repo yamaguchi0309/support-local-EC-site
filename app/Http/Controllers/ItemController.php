@@ -21,10 +21,14 @@ class ItemController extends Controller
         // /* キーワードから検索処理 */
         $keyword = $request->input('keyword');
         if(!empty($keyword)) {//$keyword　が空ではない場合、検索処理を実行します
-             $item_data = Item::where('name', 'LIKE', "%{$keyword}%")->where('is_selling', '1')->paginate(6);
+             $item_data = Item::where('is_selling', '1')
+             ->where('name', 'LIKE', "%{$keyword}%")
+             ->orwhere('description', 'LIKE', "%{$keyword}%")
+             ->orwhere('item_img', 'LIKE', "%{$keyword}%")
+             ->orwhere('name', 'LIKE', "%{$keyword}%")->paginate(6);
 
         }
-        return view('items', compact('item_data'));
+        return view('items', compact('item_data','keyword'));
     }
 
     public function findItemData(Request $request) 

@@ -13,10 +13,9 @@
     </header>
 
     <div class="admin_main">
-        <p class="page_title">登録内容編集完了</p>
+        <p class="page_title">問合削除完了</p>
         <div class="post">
-              <a class="back_top" href="{{ url('/items') }}">商品一覧</a>
-              <a class="back_top" href="{{ url('/admin/items') }}">商品管理</a>
+              <a class="back_top" href="{{ url('/admin/contacts') }}">問合管理に戻る</a>
         </div>
         </div>
     </div>

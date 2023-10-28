@@ -37,7 +37,7 @@
             ?>
 
           <td>{{$contact->id}}</td>
-          <td>{{$contact->user_id}}</td>
+          <td style="width:50px;">{{$contact->user_id}}</td>
           <td>{{$contact->name}}</td>
           <td>{{$contact->kana}}</td>
           <td>{{$contact->email}}</td>
@@ -51,12 +51,12 @@
           <td>{{$contact->updated_at}}</td>          									
       
           <!--  編集ボタン -->
-          <td><form action="/admin/contacts/edit?id={{$contact->id}}" method=post>
+          <td style="max-width:30px;"><form action="/admin/contacts/edit?id={{$contact->id}}" method=post>
           <input type=hidden name=id value="{{$contact->id}}">
           <input type=submit class='button' value=編集> </form></td>
         
           <!-- 削除ボタン -->
-          <td><form action="{{ url('/admin/contacts/delete') }}" method=post name=del>
+          <td style="max-width:30px;"><form action="{{ url('/admin/contacts/delete') }}" method=post name=del>
               @method('DELETE')  
               @csrf 
           <input type=hidden name=id value="{{$contact->id}}">

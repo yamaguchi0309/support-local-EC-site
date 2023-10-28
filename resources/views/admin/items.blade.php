@@ -31,19 +31,19 @@
           <td>{{$item->price}}</td>
           <td>{{$item->tax}}</td>
           <td>{{$item->stock}}</td>
-          <td>{{$item->is_selling}}</td>
+          <td style="width:65px;">{{$item->is_selling}}</td>
           <td>{{$item->item_img}}</td>
           <td>{{$item->memo}}</td>
           <td>{{$item->created_at}}</td>
           <td>{{$item->updated_at}}</td>          									
       
           <!--  編集ボタン -->
-          <td><form action="/admin/items/edit?id={{$item->id}}" method=post>
+          <td style="max-width:20px;"><form action="/admin/items/edit?id={{$item->id}}" method=post>
           <input type=hidden name=id value="{{$item->id}}">
-          <input type=submit class='button' value=編集> </form></td>
+          <input type=submit class='button' value=編集></form></td>
         
           <!-- 削除ボタン -->
-          <td><form action="{{ url('/admin/items/delete') }}" method=post name=del>
+          <td style="max-width:20px;"><form action="{{ url('/admin/items/delete') }}" method=post name=del>
               @method('DELETE')  
               @csrf 
           <input type=hidden name=id value="{{$item->id}}">
@@ -83,11 +83,11 @@
               <input name="Price" class="Price" type="text" value="{{ old('Price') }}"/>
               <p>税率<span class=required>*</span></p>
               <input type="radio" name="Tax" class="Tax"  value="1.08" {{ old ('Tax') == '1.08' ? 'checked' : '' }} checked/>1.08
-              <input type="radio" name="Tax" class="Tax"  value="1.10" {{ old ('Tax') == '1.10' ? 'checked' : '' }} checked/>1.10
+              <input type="radio" name="Tax" class="Tax"  value="1.10" {{ old ('Tax') == '1.10' ? 'checked' : '' }} />1.10
               <p>在庫<span class=required>*</span></p>
               <input name="Stock" class="Stock" type="text" value="{{ old('Stock') }}"/>
               <p>販売状況<span class=required>*</span></p>
-              <input type="radio" name="Is_selling" class="Is_selling"  value="1" {{ old ('Is_selling') == '販売' ? 'checked' : '' }} checked/>販売
+              <input type="radio" name="Is_selling" class="Is_selling"  value="1" {{ old ('Is_selling') == '販売' ? 'checked' : '' }} />販売
               <input type="radio" name="Is_selling" class="Is_selling"  value="0" {{ old ('Is_selling') == '停止' ? 'checked' : '' }} checked/>停止
               <p>商品画像<span class=required>*</span>（ファイル名）</p>
               <input name="Item_img" class="Item_img" type="text" value="{{ old('Item_img') }}"/>
