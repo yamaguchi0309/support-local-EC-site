@@ -20,6 +20,14 @@
     <!-- データベースに登録されている内容を表示 -->
     <div class="admin_main">
     <p class="page_title">問合一覧</p>
+    <!-- 検索機能ここから -->
+    <div style="display:flex;flex-wrap: wrap;justify-content: center; margin-bottom:20px;">
+        <form action="{{ route('admin.search.contacts') }}" method="GET" style=" text-align: center; width:70%;">
+        @csrf
+          <input type="text" name="keyword" value="{{ $keyword }}" style=" width:60%;">
+          <input type="submit" value="検索" style="width:50px;">
+        </form>
+      </div>
     <div class="post">
       <table class="admin_table">
       <tr><th>ID</th><th>userID</th><th>名前</th><th>カナ</th><th>メールアドレス</th><th>電話番号</th><th>年齢</th><th>性別</th><th>userメモ</th><th>お問い合わせ</th><th>メモ</th><th>登録日時</th><th>更新日時</th></tr>

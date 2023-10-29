@@ -19,7 +19,17 @@
 
     <!-- データベースに登録されている内容を表示 -->
     <div class="admin_main">
-    <p class="page_title">登録商品一覧</p>
+      <p class="page_title">登録商品一覧</p>
+
+      <!-- 検索機能ここから -->
+      <div style="display:flex;flex-wrap: wrap;justify-content: center; margin-bottom:20px;">
+        <form action="{{ route('admin.search.items') }}" method="GET" style=" text-align: center; width:70%;">
+        @csrf
+          <input type="text" name="keyword" value="{{ $keyword }}" style=" width:60%;">
+          <input type="submit" value="検索" style="width:50px;">
+        </form>
+      </div>
+    
     <div class="post">
       <table class="admin_table">
       <tr><th>ID</th><th>商品名</th><th>商品説明</th><th>単価</th><th>税率</th><th>在庫</th><th>販売/停止</th><th>商品画像</th><th>メモ</th><th>登録日時</th><th>更新日時</th></tr>

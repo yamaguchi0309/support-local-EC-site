@@ -35,26 +35,28 @@
     <!-- データベースに登録されている内容を表示 -->
     <div class="user_main">
       <p class="page_title">取扱商品一覧</p>
+
       <!-- 検索機能ここから -->
-      <div>
-          <form action="{{ route('search.items') }}" method="GET">
-          @csrf
-            <input type="text" name="keyword" value="{{ $keyword }}">
-            <input type="submit" value="検索">
-          </form>
-        </div>
-      <div class="block" style="flex-wrap: wrap; justify-content: flex-start; column-gap: 5%; margin: 0 50px;">
+      <div style="display:flex;flex-wrap: wrap;justify-content: center;">
+        <form action="{{ route('search.items') }}" method="GET" style=" text-align: center; width:70%;">
+        @csrf
+          <input type="text" name="keyword" value="{{ $keyword }}" style=" width:60%;">
+          <input type="submit" value="検索" style="width:50px;">
+        </form>
+      </div>
+        
+        <div class="block-items">
         @foreach($item_data as $item)
           <?php $item_price = $item->price * $item->tax; ?>
         
-          <div class="item_info" style="align-items: stretch;">
-            <div class=item_pic><a href="{{ route('item.detail', ['id'=>$item->id]) }}"><img src="{{asset('img/items/'.$item->item_img)}}"></a></div>
-            <p style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{$item->name}}</p>
-            <p>{{number_format($item_price)}}円</p>									
+          <div class="item_info-items" style="">
+            <div class=item_pic-items><a href="{{ route('item.detail', ['id'=>$item->id]) }}"><img src="{{asset('img/items/'.$item->item_img)}}"></a></div>
+            <p style="">{{$item->name}}</p>
+            <p style="">{{number_format($item_price)}}円</p>								
         
             <!--  在庫:0の場合のボタンの分岐 -->
             @if($item->stock > '0')
-            <form action='/cart?Iid={{$item->id}}' method='post'  class='button_cart'>
+            <form action='/cart?Iid={{$item->id}}' method='post' class='button_cart'>
             <input type=hidden name=id value="{{$item->id}}">
             <input type=submit class='button' value='カートに入れる'></form>
             @else

@@ -20,6 +20,14 @@
     <!-- データベースに登録されている内容を表示 -->
     <div class="admin_main">
     <p class="page_title">注文一覧</p>
+    <!-- 検索機能ここから -->
+    <div style="display:flex;flex-wrap: wrap;justify-content: center; margin-bottom:20px;">
+        <form action="{{ route('admin.search.orders') }}" method="GET" style=" text-align: center; width:70%;">
+        @csrf
+          <input type="text" name="keyword" value="{{ $keyword }}" style=" width:60%;">
+          <input type="submit" value="検索" style="width:50px;">
+        </form>
+    </div>
     <div class="post">
       <table class="admin_table">
       <tr><th>注文番号</th><th>注文日</th><th>お支払い金額</th><th>お支払い方法</th><th>お支払い状況</th><th>注文状況</th><th>配送状況</th></tr>

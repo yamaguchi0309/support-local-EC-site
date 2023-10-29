@@ -8,10 +8,24 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function selectUserData()
+    public function selectUserData(Request $request)
     {
-        $user_data = \DB::table('users')->paginate(10); 
-        return view('admin.users', compact('user_data'));
+        $user_data = DB::table('users')->paginate(10); 
+        // /* キーワードから検索処理 */
+        $keyword = $request->input('keyword');
+        if(!empty($keyword)) {//$keyword　が空ではない場合、検索処理を実行します
+            $user_data = User::where('name', 'LIKE', "%{$keyword}%")
+             ->orwhere('name', 'LIKE', "%{$keyword}%")
+             ->orwhere('kana', 'LIKE', "%{$keyword}%")
+             ->orwhere('email', 'LIKE', "%{$keyword}%")
+             ->orwhere('tel', 'LIKE', "%{$keyword}%")
+             ->orwhere('postcode', 'LIKE', "%{$keyword}%")
+             ->orwhere('birthday', 'LIKE', "%{$keyword}%")
+             ->orwhere('gender', 'LIKE', "%{$keyword}%")
+             ->orwhere('belongs', 'LIKE', "%{$keyword}%")
+             ->orwhere('memo', 'LIKE', "%{$keyword}%")->paginate(10);             
+        }
+        return view('admin.users', compact('user_data','keyword'));
     }
 
     public function findUserData(Request $request) 

@@ -19,17 +19,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/nagasaki_sasebo', function () {
-    return view('nagasaki_sasebo');
-});
+    return view('nagasaki_sasebo');})->middleware(['auth']);
 
 Route::get('/shop', function () {
-    return view('shop');
-});
+    return view('shop');})->middleware(['auth']);
 
 // mypage
     Route::get('/mypage', function () {
-        return view('mypage');
-    });
+        return view('mypage');})->middleware(['auth']);
     Route::get('/mypage/edit', [UserController::class, 'findUserData']);
     Route::post('/mypage/edit',[UserController::class, 'findUserData']);
     Route::post('/mypage/edit_confirm',[UserController::class, 'edit_confirm']);
@@ -43,8 +40,7 @@ Route::get('/shop', function () {
 
 // contact
     Route::get('/contact', function () {
-        return view('contact');
-    });
+        return view('contact');})->middleware(['auth']);
     Route::post('/contact/confirm',[ContactController::class, 'confirm']);
     Route::post('/contact/complete', [ContactController::class, 'insert']);
 
@@ -63,9 +59,7 @@ Route::get('/shop', function () {
 
 
 Route::get('/dashboard', function () {
-    return view('nagasaki_sasebo');
-})->middleware(['auth'])->name('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+    return view('nagasaki_sasebo');})->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -8,10 +8,22 @@ use Illuminate\Pagination\Paginator;
 
 class ItemController extends Controller
 {
-    public function selectItemData()
+    public function selectItemData(Request $request)
     {
+        /* テーブルからレコードを取得する */
         $item_data = DB::table('items')->paginate(10);
-        return view('admin.items', compact('item_data'));
+
+        // /* キーワードから検索処理 */
+        $keyword = $request->input('keyword');
+        if(!empty($keyword)) {//$keyword　が空ではない場合、検索処理を実行します
+             $item_data = Item::where('is_selling', '1')
+             ->where('name', 'LIKE', "%{$keyword}%")
+             ->orwhere('description', 'LIKE', "%{$keyword}%")
+             ->orwhere('item_img', 'LIKE', "%{$keyword}%")
+             ->orwhere('name', 'LIKE', "%{$keyword}%")->paginate(10);
+
+        }
+        return view('admin.items', compact('item_data','keyword'));
     }
 
     public function confirm(Request $request) 

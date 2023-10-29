@@ -10,10 +10,23 @@ use Illuminate\Pagination\Paginator;
 
 class OrderController extends Controller
 {
-    public function selectOrderData()
+    public function selectOrderData(Request $request)
     {
         $order_data = DB::table('orders')->simplePaginate(10);
-        return view('admin.orders', compact('order_data'));
+
+        // /* キーワードから検索処理 */
+        $keyword = $request->input('keyword');
+        if(!empty($keyword)) {//$keyword　が空ではない場合、検索処理を実行します
+             $order_data = Order::where('order_num', 'LIKE', "%{$keyword}%")
+             ->orwhere('payment_method', 'LIKE', "%{$keyword}%")
+             ->orwhere('payment_status', 'LIKE', "%{$keyword}%")
+             ->orwhere('order_status', 'LIKE', "%{$keyword}%")
+             ->orwhere('shipping_status', 'LIKE', "%{$keyword}%")
+             ->orwhere('memo', 'LIKE', "%{$keyword}%")
+             ->orwhere('created_at', 'LIKE', "%{$keyword}%")->paginate(10);
+            }
+
+        return view('admin.orders', compact('order_data','keyword'));
     }
 
     public function findOrderData(Request $request, $id) 

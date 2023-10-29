@@ -8,15 +8,29 @@ use Illuminate\Pagination\Paginator;
 
 class ContactController extends Controller
 {
-    public function selectContactData()
+    public function selectContactData(Request $request)
     {
         $contact_data = DB::table('contacts')
             ->join('users', 'users.id', '=', 'contacts.user_id')
             ->select('contacts.id', 'users.id as user_id', 'users.name', 'users.kana', 'users.email', 'users.tel', 'users.age', 'users.gender', 'users.memo as user_memo', 'contacts.comment', 'contacts.memo', 'contacts.created_at', 'contacts.updated_at')
             ->where('del_flg','=','1')
             ->paginate(10); 
-
-        return view('admin.contacts', compact('contact_data'));
+         
+         // /* キーワードから検索処理 */
+         $keyword = $request->input('keyword');
+         if(!empty($keyword)) {//$keyword　が空ではない場合、検索処理を実行します
+            $contact_data = DB::table('contacts')
+            ->join('users', 'users.id', '=', 'contacts.user_id')
+            ->select('contacts.id', 'users.id as user_id', 'users.name', 'users.kana', 'users.email', 'users.tel', 'users.age', 'users.gender', 'users.memo as user_memo', 'contacts.comment', 'contacts.memo', 'contacts.created_at', 'contacts.updated_at')
+            ->where('del_flg','=','1')
+            ->where('name', 'LIKE', "%{$keyword}%")
+            ->orwhere('kana', 'LIKE', "%{$keyword}%")
+            ->orwhere('email', 'LIKE', "%{$keyword}%")
+            ->orwhere('gender', 'LIKE', "%{$keyword}%")
+            ->orwhere('comment', 'LIKE', "%{$keyword}%")->paginate(10);
+         }
+         return view('admin.contacts', compact('contact_data','keyword'));
+        
     }
 
     public function findContactData(Request $request) 

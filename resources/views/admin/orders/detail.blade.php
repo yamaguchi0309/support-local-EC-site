@@ -21,15 +21,15 @@
         @php $total_amount = '0'; @endphp
               @foreach($order_detail_data as $order_detail)
                     @php $item_price = $order_detail->price * $order_detail->tax; @endphp
-                        @csrf 
-                    <div class="item_info" style="align-items: stretch; display: flex; width:100%; margin:5px 20px">
-                        <!-- <div class=item_pic><a href="{{ route('item.detail', ['id'=>$order_detail->item_id]) }}"><img src="{{asset('img/items/'.$order_detail->item_img)}}"></a></div> -->
+                        @csrf
+                    <div class="item_info" style="display: flex; width:100%; margin:5px 20px;">
+                        <div class=item_pic><img src="{{asset('img/items/'.$order_detail->item_img)}}" style="height:100px;"></div>
                         <div class="item_detail">
-                            <p>{{$order_detail->name}}</p>
-                            <p>{{number_format($item_price)}}円</p>
+                            <p style="text-align: right;">{{$order_detail->name}}</p>
+                            <p style="text-align: right;">{{number_format($item_price)}}円</p>
                         </div>
-                            <p>{{$order_detail->quantity}}個</p>
-                            <p>{{number_format($order_detail->amount)}}円</p>
+                            <p style="text-align: right;">{{$order_detail->quantity}}個</p>
+                            <p style="text-align: right;">{{number_format($order_detail->amount)}}円</p>
                     </div>
               @endforeach
 
@@ -113,7 +113,7 @@
                 
                 <div class="confirm_btn">
                     <button class="back_btn" type="button" onclick="history.back(-1)">戻る</button>
-                    <a class="back_btn"  href="{{ route('admin.orders.edit', ['id'=>$order->id]) }}">編集</a>
+                    <button class="next_btn" onclick="location.href='{{ route('admin.orders.edit', ['id'=>$order->id]) }}'">編集</button>
                 </div>
               @endforeach
               </div>

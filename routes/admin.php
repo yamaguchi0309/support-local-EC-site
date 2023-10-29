@@ -66,8 +66,9 @@ Route::middleware('auth:admin')->group(function () {
                 ->name('logout'); 
 
 // items:商品管理ルート
-    Route::get('/items', [ItemController::class, 'selectItemData']);
-    Route::post('/items', [ItemController::class, 'selectItemData']);
+    Route::get('/items', [ItemController::class, 'selectItemData'])->name('search.items'); 
+    Route::post('/items', [ItemController::class, 'selectItemData'])->name('search.items'); 
+   
     Route::post('/items/confirm', [ItemController::class, 'confirm']);
     Route::post('/items/complete', [ItemController::class, 'insert']);
 
@@ -86,8 +87,8 @@ Route::middleware('auth:admin')->group(function () {
     });
 
 // contacts:問合管理ルート
-    Route::get('/contacts', [ContactController::class, 'selectContactData']);
-    Route::post('/contacts', [ContactController::class, 'selectContactData']);
+    Route::get('/contacts', [ContactController::class, 'selectContactData'])->name('search.contacts'); 
+    Route::post('/contacts', [ContactController::class, 'selectContactData'])->name('search.contacts'); 
 
     Route::get('/contacts/edit', [ContactController::class, 'findContactData']);
     Route::post('/contacts/edit',[ContactController::class, 'findContactData']);
@@ -104,8 +105,8 @@ Route::middleware('auth:admin')->group(function () {
     });
 
 // users:会員管理ルート
-    Route::get('/users', [UserController::class, 'selectUserData']);
-    Route::post('/users', [UserController::class, 'selectUserData']);
+    Route::get('/users', [UserController::class, 'selectUserData'])->name('search.users');
+    Route::post('/users', [UserController::class, 'selectUserData'])->name('search.users');
 
     Route::get('/users/edit', [UserController::class, 'findUserData']);
     Route::post('/users/edit',[UserController::class, 'findUserData']);
@@ -122,8 +123,8 @@ Route::middleware('auth:admin')->group(function () {
     });
 
 // orders:注文管理ルート
-    Route::get('/orders', [OrderController::class, 'selectOrderData']);
-    Route::post('/orders', [OrderController::class, 'selectOrderData']);
+    Route::get('/orders', [OrderController::class, 'selectOrderData'])->name('search.orders');
+    Route::post('/orders', [OrderController::class, 'selectOrderData'])->name('search.orders');
     Route::get('/orders/detail/{id}', [OrderController::class, 'findOrderData'])->name('orders.detail');
     Route::get('/orders/edit/{id}', [OrderController::class, 'edit_findOrderData'])->name('orders.edit');
     Route::patch('/orders/edit', [OrderController::class, 'update'])->name('orders.update');

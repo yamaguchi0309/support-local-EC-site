@@ -39,6 +39,55 @@ body {
 
 /* 上の部分は気にせずここから書く */
 
+/* items(user) */
+	.block-items{
+		flex-wrap: wrap; justify-content: flex-start; column-gap: 5%; margin: 0 50px;
+		display: flex;
+		}
+
+	.item_info-items{
+		align-items: stretch;
+		padding: 10px 0;
+		width:calc(90%/3);
+		}
+	.item_info-items p{
+		white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:80%; margin: 5px auto;
+		}
+
+	.item_pic-items img{
+		/* object-fit: contain; */
+		width: 80%;
+		height: 270px;
+		border-radius: 10px;
+		margin: 5px auto;
+		}
+	.item_pic img{
+		/* object-fit: contain; */
+		width: 270px;
+		height: 270px;
+		border-radius: 10px;
+		margin: 5px auto;
+		}
+		
+	.item_detail{
+		position: relative;
+	}	
+	.item_detail_button{
+		position: absolute;
+	bottom: -2.2rem;
+	left: 50%;
+	transform: translate(-50%, -50%);
+		width: 90%;
+		margin-top: 3px;
+	}
+	.button_cart{
+		margin: 5px auto;
+		width: 80%;
+	}
+
+
+
+
 /* header(全画面共通) */
 	.home .fadein_down_0-1.scrollin {
 		background-color: rgba(255, 255, 255, 0.7);
@@ -228,27 +277,18 @@ body {
 				}
 				.item_info p,
 				.info p{
-					margin: 5px auto;
-					width: 80%;
+					/* margin: 5px auto; */
+					/* width: 80%; */
 				}
-				.button_cart{
-					margin: 5px auto;
-					width: 80%;
-				}
-			.item_detail{
-				width: 100%;
+				
+			.item_detail p{
+				/* width: 100%; */
+				/* text-align: right; */
 				}
 			
 			.item_info{
 				padding: 10px 0;
 				width:calc(90%/3);
-				}
-			.item_pic img{
-				object-fit: contain;
-				width: 100%;
-				height: 270px;
-				border-radius: 10px;
-				margin: 5px auto;
 				}
 			.pic img{
 				object-fit: contain;
@@ -376,16 +416,24 @@ body {
 		width: 100%;
 		height: 33vh
 		}
-  	.back_btn{
+  	.back_btn,
+	.next_btn{
 		width: 100%;
 		padding: 10px;
 		border-radius: 4px;
 		cursor: pointer;
 		margin: 5px 0;
 		font-size: 1.2rem;
-		background-color: transparent;
-		border: 2px solid #066;
-		color: #066;
+		border: 2px solid #1f2d56;
+		}
+	.back_btn,
+	.next_btn{
+		background-color: white;
+		color: #1f2d56;
+		}
+	.next_btn{
+		background-color: #1f2d56;
+		color: white;
 		}
 	.back_top {
 		display: block;
