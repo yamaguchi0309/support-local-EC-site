@@ -30,7 +30,7 @@ class UserController extends Controller
 
     public function findUserData(Request $request) 
     {    
-        $user_data = DB::select("SELECT id, name, kana, email, tel, postcode, address, birthday, gender, memo FROM users WHERE id = '$request->id'"); 
+        $user_data = DB::select("SELECT id, name, kana, email, tel, postcode, address, birthday, gender, memo, created_at, updated_at FROM users WHERE id = '$request->id'"); 
         return view('admin.users.edit', compact('user_data'));
     }
 

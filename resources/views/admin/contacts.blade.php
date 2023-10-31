@@ -34,34 +34,33 @@
         @foreach($contact_data as $contact)
         <tr>
 
-            <?php
-              if($contact->gender === "0"){
-                  $Gender = "男性";
-              }elseif($contact->gender === "1"){
-                  $Gender = "女性";
-              }else{
-                  $Gender = "回答しない";
-              }
-            ?>
+          @php
+            if($contact->gender === "0"){
+                $Gender = "男性";
+            }elseif($contact->gender === "1"){
+                $Gender = "女性";
+            }else
+                $Gender = "回答しない";
+          @endphp
 
-          <td>{{$contact->id}}</td>
-          <td style="width:50px;">{{$contact->user_id}}</td>
-          <td>{{$contact->name}}</td>
-          <td>{{$contact->kana}}</td>
-          <td>{{$contact->email}}</td>
-          <td>{{$contact->tel}}</td>
-          <td>{{$contact->age}}</td>
-          <td>{{$Gender}}</td>
-          <td>{{$contact->user_memo}}</td>
-          <td>{{$contact->comment}}</td>
-          <td>{{$contact->memo}}</td>
-          <td>{{$contact->created_at}}</td>
-          <td>{{$contact->updated_at}}</td>          									
+          <td style="width:2%;">{{$contact->id}}</td>
+          <td style="width:2%;">{{$contact->user_id}}</td>
+          <td style="width:4%;">{{$contact->name}}</td>
+          <td style="width:4%;">{{$contact->kana}}</td>
+          <td style="width:4%;">{{$contact->email}}</td>
+          <td style="width:4%;">{{$contact->tel}}</td>
+          <td style="width:4%;">{{$contact->age}}</td>
+          <td style="width:4%;">{{$Gender}}</td>
+          <td style="overflow:scroll; text-overflow:clip;">{{$contact->user_memo}}</td>
+          <td style="overflow:scroll; text-overflow:clip;">{{$contact->comment}}</td>
+          <td style="overflow:scroll; text-overflow:clip;">{{$contact->memo}}</td>
+          <td style="overflow:scroll; text-overflow:clip; width:8%;">{{$contact->created_at}}</td>
+          <td style="overflow:scroll; text-overflow:clip; width:8%;">{{$contact->updated_at}}</td>          									
       
           <!--  編集ボタン -->
           <td style="max-width:30px;"><form action="/admin/contacts/edit?id={{$contact->id}}" method=post>
           <input type=hidden name=id value="{{$contact->id}}">
-          <input type=submit class='button' value=編集> </form></td>
+          <input type=submit class='button' value=メモ追記> </form></td>
         
           <!-- 削除ボタン -->
           <td style="max-width:30px;"><form action="{{ url('/admin/contacts/delete') }}" method=post name=del>

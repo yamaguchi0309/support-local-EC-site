@@ -35,17 +35,17 @@
       <tr><th>ID</th><th>商品名</th><th>商品説明</th><th>単価</th><th>税率</th><th>在庫</th><th>販売/停止</th><th>商品画像</th><th>メモ</th><th>登録日時</th><th>更新日時</th></tr>
         @foreach($item_data as $item)
         <tr>
-          <td>{{$item->id}}</td>
-          <td>{{$item->name}}</td>
-          <td>{{$item->description}}</td>
-          <td>{{$item->price}}</td>
-          <td>{{$item->tax}}</td>
-          <td>{{$item->stock}}</td>
+          <td style="width:4%;">{{$item->id}}</td>
+          <td style="overflow:scroll; text-overflow:clip;">{{$item->name}}</td>
+          <td style="overflow:scroll; text-overflow:clip;">{{$item->description}}</td>
+          <td style="width:4%;">{{$item->price}}</td>
+          <td style="width:4%;">{{$item->tax}}</td>
+          <td style="width:4%;">{{$item->stock}}</td>
           <td style="width:65px;">{{$item->is_selling}}</td>
-          <td>{{$item->item_img}}</td>
-          <td>{{$item->memo}}</td>
-          <td>{{$item->created_at}}</td>
-          <td>{{$item->updated_at}}</td>          									
+          <td style="overflow:scroll; text-overflow:clip;">{{$item->item_img}}</td>
+          <td style="overflow:scroll; text-overflow:clip;">{{$item->memo}}</td>
+          <td style="overflow:scroll; text-overflow:clip; width:8%;">{{$item->created_at}}</td>
+          <td style="overflow:scroll; text-overflow:clip; width:8%;">{{$item->updated_at}}</td>          									
       
           <!--  編集ボタン -->
           <td style="max-width:20px;"><form action="/admin/items/edit?id={{$item->id}}" method=post>

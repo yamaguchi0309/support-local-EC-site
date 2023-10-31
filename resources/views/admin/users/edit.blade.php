@@ -14,7 +14,7 @@
 
     @foreach($user_data as $user)             
         <div class=admin_main>
-        <p class=page_title>会員情報更新</p>
+        <p class=page_title>メモ追記 会員情報</p>
             <div>
               <ul>
                 @foreach ($errors->all() as $error)
@@ -25,17 +25,15 @@
             <div class=post>
             <form action="{{ url('/admin/users/edit_confirm') }}" method=post>
                 @csrf 
-
-                    <?php
-                        if($user->gender === "0"){
-                            $Gender = "男性";
-                        }elseif($user->gender === "1"){
-                            $Gender = "女性";
-                        }else{
-                            $Gender = "回答しない";
-                        }
-                    ?>
-               
+                    @php
+                    if($user->gender === "0"){
+                        $Gender = "男性";
+                    }elseif($user->gender === "1"){
+                        $Gender = "女性";
+                    }else
+                        $Gender = "回答しない";
+                    @endphp
+                    
                 <p>名前</p>
                 {{$user->name}}
                 <p>カナ</p>
@@ -52,6 +50,10 @@
                 {{$user->birthday}}
                 <p>性別</p>
                 {{$Gender}}
+                <p>登録日時</p>
+                {{$user->created_at}}
+                <p>更新日時</p>
+                {{$user->updated_at}}        
                 <p>メモ<span class=required>*</span></p>
                 <textarea name="Memo" class="Memo">{{$user->memo}}</textarea>  
                 <input type=hidden name=id value="{{$user->id}}">

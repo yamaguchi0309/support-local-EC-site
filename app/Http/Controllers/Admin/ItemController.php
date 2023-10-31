@@ -70,7 +70,7 @@ class ItemController extends Controller
 
     public function findItemData(Request $request) 
     {    
-        $item_data = DB::select("SELECT id, name, description, price, tax, stock, is_selling, item_img, memo FROM items WHERE id = '$request->id'"); 
+        $item_data = DB::select("SELECT id, name, description, price, tax, stock, is_selling, item_img, memo, created_at, updated_at FROM items WHERE id = '$request->id'"); 
         return view('admin.items.edit', compact('item_data'));
     }
 

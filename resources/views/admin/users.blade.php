@@ -44,23 +44,23 @@
               }
             ?>
 
-          <td>{{$user->id}}</td>
-          <td>{{$user->name}}</td>
-          <td>{{$user->kana}}</td>
-          <td>{{$user->email}}</td>
-          <td>{{$user->tel}}</td>
-          <td>{{$user->postcode}}</td>
-          <td>{{$user->address}}</td>
-          <td>{{$user->birthday}}</td>
+          <td style="width:4%;">{{$user->id}}</td>
+          <td style="width:4%;">{{$user->name}}</td>
+          <td style="width:4%;">{{$user->kana}}</td>
+          <td style="width:4%;">{{$user->email}}</td>
+          <td style="width:4%;">{{$user->tel}}</td>
+          <td style="width:4%;">{{$user->postcode}}</td>
+          <td style="overflow:scroll; text-overflow:clip; width:16%;">{{$user->address}}</td>
+          <td style="width:8%;">{{$user->birthday}}</td>
           <td>{{$Gender}}</td>
-          <td>{{$user->memo}}</td>
-          <td>{{$user->created_at}}</td>
-          <td>{{$user->updated_at}}</td>          									
+          <td style="overflow:scroll; text-overflow:clip;">{{$user->memo}}</td>
+          <td style="overflow:scroll; text-overflow:clip; width:8%;">{{$user->created_at}}</td>
+          <td style="overflow:scroll; text-overflow:clip; width:8%;">{{$user->updated_at}}</td>          									
       
           <!--  編集ボタン -->
           <td style="max-width:25px;"><form action="/admin/users/edit?id={{$user->id}}" method=post>
           <input type=hidden name=id value="{{$user->id}}">
-          <input type=submit class='button' value=編集></form></td>
+          <input type=submit class='button' value=メモ追記></form></td>
         
           <!-- 削除ボタン -->
           <td style="max-width:25px;"><form action="{{ url('/admin/users/delete') }}" method=post name=del>

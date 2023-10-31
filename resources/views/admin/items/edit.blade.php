@@ -44,7 +44,8 @@
                 <input name="Item_img" class="Item_img" type="text" value="{{$item->item_img}}"/>
                 <p>メモ</p>
                 <textarea name="Memo" class="Memo">{{$item->memo}}</textarea>  
-                
+                <p>登録日時</p>{{$item->created_at}}
+                <p>更新日時</p>{{$item->updated_at}}      
                 <input type=hidden name=id value="{{$item->id}}">
                 <button class="back_btn" type="button" onclick="history.back(-1)">戻る</button>
                 <button class="submit" type="submit" >更新</button> 

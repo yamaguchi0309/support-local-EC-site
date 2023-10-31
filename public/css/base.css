@@ -74,14 +74,14 @@ body {
 	}	
 	.item_detail_button{
 		position: absolute;
-	bottom: -2.2rem;
-	left: 50%;
-	transform: translate(-50%, -50%);
+		bottom: -1.4rem;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		width: 90%;
 		margin-top: 3px;
 	}
 	.button_cart{
-		margin: 5px auto;
+		/* margin: 5px auto; */
 		width: 80%;
 	}
 
@@ -459,10 +459,11 @@ body {
 		table.admin_table th {
 			font-weight: bold;
 			text-align: left;
-			padding-right:4px;
-			/* border: 2px solid #030303; */
+			padding-left:2px;
+			border: 2px solid #ffffff;
 			}
-		table.admin_table tr,td {
+		table.admin_table tr,
+		table.admin_table td {
 			border: 2px solid #ffffff;
 			vertical-align: middle;
 			text-align: left;
@@ -470,7 +471,14 @@ body {
 			overflow: hidden; 
 			text-overflow: ellipsis;
 			max-width: 0;
+			padding:2px 0px 2px 2px;
 			}
+			table.admin_table p {
+				
+				
+				}
+
+
 		table.admin_table tr:nth-child(even) {	background: #c3c3c3;	}
 		table.admin_table tr:nth-child(odd) 	{	background: white;		}
 	

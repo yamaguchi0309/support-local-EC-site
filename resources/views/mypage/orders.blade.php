@@ -66,17 +66,17 @@
                        
             <tr>
             <td>{{$order->order_num}}</td>
-            <td>{{$order->created_at}}</td>
-            <td>{{number_format($total_amount)}}円</td>
-            <td>{{$Payment_method}}</td>
-            <td>{{$Payment_status}}</td>
-            <td>{{$Order_status}}</td>
-            <td>{{$Shipping_status}}</td>       									
+            <td style="width:16%;">{{$order->created_at}}</td>
+            <td style="width:12%;text-align:right;">{{number_format($total_amount)}}円</td>
+            <td style="width:16%;">{{$Payment_method}}</td>
+            <td style="width:8%;">{{$Payment_status}}</td>
+            <td style="width:8%;">{{$Order_status}}</td>
+            <td style="width:8%;">{{$Shipping_status}}</td>       									
         
             <!--  詳細ボタン -->
-            <td><form action="/mypage/orders/detail?id={{$order->id}}" method=post>
+            <td style="width:8%;"><form action="/mypage/orders/detail?id={{$order->id}}" method=post>
             <input type=hidden name=id value="{{$order->id}}">
-            <input type=submit class='button' value=詳細> </form></td>
+            <input type=submit class='button' value=詳細 style="width:100%;"> </form></td>
             </tr>
           @endforeach
         </table>

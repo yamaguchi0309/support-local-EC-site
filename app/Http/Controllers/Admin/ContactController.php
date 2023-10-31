@@ -36,7 +36,7 @@ class ContactController extends Controller
     public function findContactData(Request $request) 
     {    
         $contact_data = DB::select(
-            "SELECT C.id, U.id as user_id, U.name, U.kana, U.email, U.tel, U.age, U.gender, U.memo as user_memo, C.comment, C.memo, C.del_flg
+            "SELECT C.id, U.id as user_id, U.name, U.kana, U.email, U.tel, U.age, U.gender, U.memo as user_memo, C.comment, C.memo, C.del_flg, C.created_at, C.updated_at
              FROM contacts C
              JOIN  users U ON C.user_id = U.id 
              WHERE C.id = '$request->id' AND C.del_flg = '1'"); 

@@ -46,28 +46,24 @@
         <h1>おすすめ</h1>
         <div class="block">
             <div class="info">
-                <div class=pic><img src="{{asset('img/items/fish_ハーブ鯖.png')}}" alt="海産物"></div>
-                <div class="theme">
-                        <a>ハーブ鯖</a>
-                </div>
+                <div class="item_pic-items"><a href="{{ route('item.detail', ['id'=>'1']) }}">
+                    <img src="{{asset('img/items/fish_九十九島産 長崎ハーブ鯖 お刺身 150g.png')}}" alt="海産物" style="width:100%;"></a></div>
+                <div class="theme"><a>ハーブ鯖</a></div>
             </div>
             <div class="info">
-                <div class=pic><img src="{{asset('img/items/meet_長崎和牛ステーキ.jpeg')}}" alt="畜産物"></div>
-                <div class="theme">
-                        <a>長崎和牛</a>
-                </div>
+                <div class="item_pic-items"><a href="{{ route('item.detail', ['id'=>'2']) }}">
+                    <img src="{{asset('img/items/meet_長崎和牛サーロインステーキ 180g×3枚.jpeg')}}" alt="畜産物" style="width:100%;"></div>
+                <div class="theme"><a>長崎和牛</a></div>
             </div>
             <div class="info">
-                <div class=pic><img src="{{asset('img/items/sweets_九十九島せんぺい.jpeg')}}" alt="お菓子"></div>
-                <div class="theme">
-                        <a>九十九島せんぺい</a>
-                </div>
+                <div class="item_pic-items"><a href="{{ route('item.detail', ['id'=>'3']) }}">
+                    <img src="{{asset('img/items/sweets_九十九島せんぺい 12枚入り.jpeg')}}" alt="お菓子" style="width:100%;"></div>
+                <div class="theme"><a>九十九島せんぺい</a></div>
             </div>
             <div class="info">
-                <div class=pic><img src="{{asset('img/items/dish_三川内焼.jpeg')}}" alt="工芸品"></div>
-                <div class="theme">
-                        <a>三川内焼</a>
-                </div>
+                <div class="item_pic-items"><a href="{{ route('item.detail', ['id'=>'4']) }}">
+                    <img src="{{asset('img/items/item_三川内焼 唐子絵飯碗大小.jpeg')}}" alt="工芸品" style="width:100%;"></div>
+                <div class="theme"><a>三川内焼</a></div>
             </div>
         </div>
     </div>

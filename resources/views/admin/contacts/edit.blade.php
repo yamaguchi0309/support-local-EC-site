@@ -14,7 +14,7 @@
 
     @foreach($contact_data as $contact)             
         <div class=admin_main>
-        <p class=page_title>会員情報更新</p>
+        <p class=page_title>メモ追記 会員情報</p>
             <div>
               <ul>
                 @foreach ($errors->all() as $error)
@@ -26,15 +26,15 @@
             <form action="{{ url('/admin/contacts/edit_confirm') }}" method=post>
                 @csrf 
 
-                    <?php
-                        if($contact->gender === "0"){
-                            $Gender = "男性";
-                        }elseif($contact->gender === "1"){
-                            $Gender = "女性";
-                        }else{
-                            $Gender = "回答しない";
-                        }
-                    ?>
+                @php
+                    if($contact->gender === "0"){
+                        $Gender = "男性";
+                    }elseif($contact->gender === "1"){
+                        $Gender = "女性";
+                    }else
+                        $Gender = "回答しない";
+                @endphp
+
                 <p>ID</p>{{$contact->id}}
                 <p>userID</p>{{$contact->user_id}}
                 <p>名前</p>{{$contact->name}}
@@ -45,12 +45,14 @@
                 <p>性別</p>{{$Gender}}
                 <p>userメモ</p>{{$contact->user_memo}}
                 <p>お問い合わせ</p>{{$contact->comment}}
+                <p>登録日時</p>{{$contact->created_at}}
+                <p>更新日時</p>{{$contact->updated_at}}        
                 
                 <p>メモ<span class=required>*</span></p>
                 <textarea name="Memo" class="Memo">{{$contact->memo}}</textarea>  
                 <input type=hidden name=id value="{{$contact->id}}">
                 <button class="back_btn" type="button" onclick="history.back(-1)">戻る</button>
-                <button class="submit" type="submit" >更新</button> 
+                <button class="submit" type="submit" >メモ追記</button> 
             </form>
             </div>
         </div>
