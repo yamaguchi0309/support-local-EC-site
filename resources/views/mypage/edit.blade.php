@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>CafeCafe</title>
+    <title>NagasakiSasebo</title>
     <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -23,7 +23,7 @@
               </ul>
             </div>
             <div class=post>
-            <form action="{{ url('/mypage/edit_confirm') }}" method=post>
+            <form action="{{ url('/mypage/edit_confirm') }}" method=post class="user_mypage_form">
                 @csrf 
                
                 <p>名前<span class=required>*</span></p>
@@ -47,7 +47,7 @@
                 
                 <input type=hidden name=id value="{{$user->id}}">
                 <button class="back_btn" type="button" onclick="history.back(-1)">戻る</button>
-                <button class="submit" type="submit" >更新</button> 
+                <button class="submit" type="submit" >確認</button> 
             </form>
             </div>
         </div>

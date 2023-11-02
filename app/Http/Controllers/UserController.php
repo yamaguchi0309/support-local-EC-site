@@ -75,6 +75,9 @@ class UserController extends Controller
             FROM users 
             WHERE id = '$request->id'"); 
 
+            $user_age = $user_age[0]->age;
+
+
         DB::table('users')->where('id','=',$request->id)->update([
                 'age' => $user_age,
             ]);

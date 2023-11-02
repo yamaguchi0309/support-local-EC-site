@@ -16,7 +16,7 @@
     <div class="admin_main">
         <p class="page_title">更新内容確認</p>
         <div class="post">
-            <div class="folm_bl">
+            <div class="form_bl">
                 <a>下記の内容を確認して、【登録】<br>内容を訂正する場合は、【戻る】</a>
             </div>
             

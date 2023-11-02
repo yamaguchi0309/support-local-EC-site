@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CafeCafe</title>
+    <title>NagasakiSasebo</title>
     <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,7 +16,7 @@
     <div class="admin_main">
         <p class="page_title">お問い合せ</p>
         <div class="post">
-            <div class="folm_bl">
+            <div class="form_bl">
                 <a>下記の内容をご確認の上送信ボタンを押してください。<br>内容を訂正する場合は戻るを押してください。</a>
             </div>
             

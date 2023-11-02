@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CafeCafe</title>
+    <title>NagasakiSasebo</title>
     <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -15,22 +15,23 @@
 
     <div class="user_main">
         <p class="page_title">ご注文内容確認</p>
-        下記の内容をご確認の上、注文確定ボタンを押してください。
-        <div class="block" style="flex-wrap: wrap; justify-content: flex-start; column-gap: 5%; margin: 0 50px;">   
+        <div class="user_order_main_block" style="">  
+        <P style="margin:5px 20px;">下記の内容をご確認の上、注文確定ボタンを押してください。</P> 
             @php $total_amount = '0'; @endphp
             @foreach($cart_data as $cart)
                 @php $item_price = $cart->price * $cart->tax; @endphp
                 @csrf 
-                <div class="item_info" style="align-items: stretch; display: flex; width:100%; margin:5px 20px">
-                    <div class=item_pic><img src="{{asset('img/items/'.$cart->item_img)}}" style="margin-right:20px; width:100px; height:100px;"></div>
-                    <div class="item_detail" style="display:flex; width:100%;">
-                        <p style="text-align:left; width:60%; margin-top:11px;">{{$cart->name}}</p>
-                        <p style="text-align:right; width:10%; margin-top:11px;">{{number_format($item_price)}}円</p>
-                        <p style="text-align:right; width:10%; margin-top:11px;">{{$cart->quantity}}個</p>
-                        <p style="text-align:right; width:25%; font-weight:bold;  margin-top:11px;">計：{{number_format($cart->amount)}}円</p>
+                <div class="item_info" style="display:flex; width:100%;  padding:10px; border-radius:10px; background:#ff000024;">
+                    <div class="user_order_detail_item_pic"><a href="{{ route('item.detail', ['id'=>$cart->item_id]) }}"><img src="{{asset('img/items/'.$cart->item_img)}}" style="; "></a></div>
+                    <div class="user_cart_detail_item_detail" style="display:block; width:100%;">
+                        <div style="display:flex; justify-content: space-between;">
+                        <p style="text-align:left; width:40%;">{{$cart->name}}</p>
+                        <p style="text-align:right; width:20%;">{{number_format($item_price)}}円</p>
+                        <p style="text-align:right; width:10%; ">{{$cart->quantity}}個</p>
+                        <p style="text-align:right; width:30%; font-weight:bold;  ">計：{{number_format($cart->amount)}}円</p>
                         @php $total_amount += $cart->amount; @endphp
                     </div>
-                </div>
+                </div> </div>
             @endforeach
 
             @php $postage = '1000'; @endphp
@@ -64,7 +65,7 @@
                 <input type="hidden" name="Amount" value="{{$total_amount}}">
                 <input type="hidden" name="Postage" value="{{$postage}}">
 
-                <div class="folm_bl" style="margin-top:15px;">
+                <div class="form_bl" style="margin-top:15px;">
                     <a>※内容を訂正する場合は戻るボタンを押してください。</a>
                 </div>
                 <div class="confirm_btn">

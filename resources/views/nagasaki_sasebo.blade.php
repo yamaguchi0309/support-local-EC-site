@@ -33,12 +33,12 @@
     </header>
     </body>
 
-    <div class="concept">
+    <div class="concept" style="position:absolute; height:500px; top:200px; right:150px; -ms-writing-mode: tb-rl;writing-mode: vertical-rl;">
         <h1>魅力溢れる本土最西端の地</h1>
-        <h2>漁獲量全国2位は魚の美味しさの証</h2>
-        <h2>和牛は内閣総理大臣賞（肉牛の部）を受賞</h2>
-        <h2>モンドセレクション14年連続最高金賞受賞のお菓子</h2>
-        <h2>約400年以上もの歴史を誇る陶磁器は国の伝統工芸</h2>
+        <p>漁獲量全国二位は魚の美味しさの証</p>
+        <p>肉牛の部で内閣総理大臣賞を受賞</p>
+        <p>モンドセレクション十四年連続最高金賞受賞のお菓子</p>
+        <p>約四〇〇年以上もの歴史を誇る陶磁器は国の伝統工芸</p>
     </div>
 
     

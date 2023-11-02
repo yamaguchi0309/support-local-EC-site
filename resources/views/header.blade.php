@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CafeCafe</title>
+    <title>NagasakiSasebo</title>
     <!-- <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
@@ -38,10 +38,10 @@
     <div class="head fadein_down_0-1">
         <div class="header_upper">
             <div class="header_logo">
-                <a href="{{ url('/nagasaki_sasebo') }}"><img src="{{asset('img/logo.png')}}" alt="Cafe"></a></div>
+                <a href="{{ url('/nagasaki_sasebo') }}"><img src="{{asset('img/logo.png')}}"></a></div>
             <div class="header_icon">
-                <a href="{{ url('/mypage') }}"><img src="{{asset('img/mypage_icon.png')}}" alt="Cafe"></a>
-                <a href="{{ url('/cart') }}"><img src="{{asset('img/cart_icon.png')}}" alt="Cafe"></a>
+                <a href="{{ url('/mypage') }}"><img src="{{asset('img/mypage_icon.png')}}" alt="mypage" style="margin:0 5px;"></a>
+                <a href="{{ url('/cart') }}"><img src="{{asset('img/cart_icon.png')}}" alt="cart" style="margin:0 5px;"></a>
                 </div>
                 <button type="button" class="btn">
                     <img src="{{asset('img/menu.png')}}" alt="menu">

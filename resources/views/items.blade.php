@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CafeCafe</title>
+    <title>NagasakiSasebo</title>
     <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -51,17 +51,17 @@
         
           <div class="item_info-items" style="">
             <div class=item_pic-items><a href="{{ route('item.detail', ['id'=>$item->id]) }}"><img src="{{asset('img/items/'.$item->item_img)}}"></a></div>
-            <p style="">{{$item->name}}</p>
-            <p style="">{{number_format($item_price)}}円</p>								
+            <p style="text-align:right;">{{$item->name}}</p>
+            <p style="text-align:right;">{{number_format($item_price)}}円</p>								
         
             <!--  在庫:0の場合のボタンの分岐 -->
             @if($item->stock > '0')
-            <form action='/cart?Iid={{$item->id}}' method='post' class='button_cart' style="margin: 5px auto;">
+            <form action='/cart?Iid={{$item->id}}' method='post' class='button_cart' style="">
             <input type=hidden name=id value="{{$item->id}}">
-            <input type=submit class='button' value='カートに入れる' style="background:yellow;border:1px solid #ffff00; border-radius:10px;"></form>
+            <input type=submit class='button' value='カートに入れる' style="display:block;margin: 0px auto;width:80%;background:yellow;border:1px solid #ffff00; border-radius:10px;"></form>
             @else
             <form action='/contact' method='get'  class='button_cart'>
-            <input type=submit class='button' value='在庫切れ（問い合わせる）' style="background:yellow; border:1px solid #ffff00; border-radius:10px;"></form>
+            <input type=submit class='button' value='在庫切れ（問い合わせる）' style="display:block;margin: 0px auto;background:yellow; border:1px solid #ffff00; border-radius:10px;"></form>
             @endif
           </div>  
         @endforeach

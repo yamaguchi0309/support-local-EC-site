@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CafeCafe</title>
+    <title>NagasakiSasebo</title>
     <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}">
     <!-- asset関数を使うとうまくいくかも、public -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

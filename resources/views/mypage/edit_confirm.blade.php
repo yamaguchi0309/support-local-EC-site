@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CafeCafe</title>
+    <title>NagasakiSasebo</title>
     <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,11 +16,11 @@
     <div class="admin_main">
         <p class="page_title">更新内容確認</p>
         <div class="post">
-            <div class="folm_bl">
-                <a>下記の内容を確認して、【登録】<br>内容を訂正する場合は、【戻る】</a>
+            <div class="form_bl">
+                <a>下記の内容を確認して【更新】<br>内容を訂正する場合は【戻る】</a>
             </div>
             
-            <form action="{{ url('/mypage/edit_complete') }}" method="POST">
+            <form action="{{ url('/mypage/edit_complete') }}" method="POST" class="user_mypage_form">
                 @csrf 
 
                 <input type="hidden" name="id" value="{{$user_data['id']}}">
@@ -62,7 +62,7 @@
 
                 <div class="confirm_btn">
                     <button class="back_btn" type="button" onclick="history.back(-1)">戻る</button>
-                    <button class="submit" type="submit" >登録</button> 
+                    <button class="submit" type="submit" >更新</button> 
                 </div>
             </form>
         </div>

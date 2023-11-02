@@ -16,7 +16,7 @@
     <div class="admin_main">
         <p class="page_title">編集内容確認</p>
         <div class="post">
-            <div class="folm_bl">
+            <div class="form_bl">
                 <a>下記の内容を確認して、【登録】<br>内容を訂正する場合は【戻る】</a>
             </div>
             
@@ -31,6 +31,7 @@
                 <input type="hidden" name="Stock" value="{{$item_data['Stock']}}">
                 <input type="hidden" name="Is_selling" value="{{$item_data['Is_selling']}}">
                 <input type="hidden" name="Item_img" value="{{$item_data['Item_img']}}">
+                <input type="hidden" name="Memo" value="{{$item_data['Memo']}}">
                 
                 <?php
                     if($item_data['Is_selling'] === "0"){

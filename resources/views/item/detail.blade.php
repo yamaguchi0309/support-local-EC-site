@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CafeCafe</title>
+    <title>NagasakiSasebo</title>
     <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -21,10 +21,10 @@
       @foreach($item_data as $item)
         <?php $item_price = $item->price * $item->tax; ?>
        
-        <div class="item_info" style="display: flex; width:100%; margin:0px 20px">
+        <div class="item_detail_info" style=" width:100%; margin:0px 20px">
             <div class="item_pic" ><img src="{{asset('img/items/'.$item->item_img)}}" ></a></div>
               <div class="item_detail" style="width:100%; ">
-                <p style="font-size: 30px; padding: 0px 30px 10px;">{{$item->name}}</p>
+                <p class="item_detail_name" >{{$item->name}}</p>
                 <p style="padding: 0 30px;  white-space: pre-wrap;">{{$item->description}}</p>
                 <p style="text-align: right; padding: 10px 30px;">{{number_format($item_price)}}円</p>
 

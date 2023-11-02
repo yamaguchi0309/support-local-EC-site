@@ -40,8 +40,14 @@ body {
 /* 上の部分は気にせずここから書く */
 
 /* items(user) */
+.user_items_block{
+	column-gap: 2%;
+	display: flex;
+	margin: 0 auto;
+	}
+
 	.block-items{
-		flex-wrap: wrap; justify-content: flex-start; column-gap: 5%; margin: 0 50px;
+		flex-wrap: wrap; justify-content: flex-start; column-gap: 5%; margin: 0 20px;
 		display: flex;
 		}
 
@@ -80,12 +86,79 @@ body {
 		width: 90%;
 		margin-top: 3px;
 	}
-	.button_cart{
-		/* margin: 5px auto; */
-		width: 80%;
+	.form_cart_button{
+		display:block; width:15%;
 	}
 
+/* contact(user) */
+	.user_contact_form{
+		width:50%; margin:10px auto; padding:10px; border-radius:10px; background:#0065ff24;
+	}
+	.user_contact_form_bl h1,
+	.user_contact_form_bl a{
+		width:50%;
+	}
 
+/* shop(user) */
+	.user_shop_map{
+		width:500px; 
+		height:350px;
+	}
+
+/* mypage(user) 会員情報更新*/
+	.user_mypage_form{
+		width:50%; margin:10px auto; padding:10px; border-radius:10px; background:#0065ff24;
+	}
+
+/*  mypage(user) 注文詳細*/
+	.user_order_detail_tel,
+	.user_order_detail_postcode,
+	.user_order_detail_address{
+		display:flex; border-bottom: 1px solid #666; margin-top:5px;
+	}
+
+	.user_order_detail_address p{
+		text-align:right; width:75%;
+	}
+
+	.user_order_detail_item_pic img{
+		border-radius: 10px;
+		margin: 5px 20px 5px 0;
+		width:100px; height:100px;
+	}
+
+	.user_order_detail_item_detail p{
+		position: relative;
+		text-align:right; width:15%; 
+		margin: 1px auto 5px;
+	}
+
+	.user_cart_detail_item_detail p{
+		text-align:right; width:15%; 
+		margin: 1px 0px 5px;
+	}
+
+	.user_order_main_block{
+		display: flex;
+		flex-wrap: wrap; justify-content: flex-start; column-gap: 5%; margin: 0 50px;
+	}
+
+	.user_cart_delite_p{
+	text-align:right; font-weight:bold; margin-right:25px; height:20%;
+	}
+
+	.cart_button{
+		width:50px; bottom: -11%; right:-62%; position: relative;
+	}
+
+	.user_cart_shipping_p{
+		font-size: 18px;
+	 	display:block;margin:10px 0;
+	}
+
+	.item_detail_name{
+		font-size: 30px; padding: 0px 30px 10px;
+	}
 
 
 /* header(全画面共通) */
@@ -156,6 +229,7 @@ body {
 			display: flex;
 			position: absolute;
     		right: 0; /* 右寄せ */
+			bottom:20px;
 		}
 
 		.header_lower{
@@ -230,21 +304,25 @@ body {
 		cursor: pointer;
 		margin: 5px 0;
 		font-size: 1.2rem;
-		} */
+		} 
+	
 	
 /* home画面 */
 	.concept {
 		margin: 60px 0;
 	}
-	.concept h1,h2{
-		text-align: center;
-		margin: 4px;
+	.concept p{
+		/* text-align: center; */
+		margin: 10px 30px;
+		font-size: 18px;
+		color:white;
 	}
 
 	.concept h1{
 		font-size: 32px;
 		font-weight: bold;
-		text-decoration: underline;
+		color:white;
+		
 	}
 
 	.concept h2{
@@ -265,6 +343,7 @@ body {
 			font-weight: bold;
 			text-align: center;
 			text-decoration: underline;
+			margin-top:30px;
 			}
 		.block{
 			column-gap: 2%;
@@ -277,7 +356,7 @@ body {
 				}
 				.item_info p,
 				.info p{
-					/* margin: 5px auto; */
+					/* margin: 0px; */
 					/* width: 80%; */
 				}
 				
@@ -288,8 +367,15 @@ body {
 			
 			.item_info{
 				padding: 10px 0;
+				margin: 5px 20px;
 				width:calc(90%/3);
 				}
+				.item_detail_info{
+					display: flex;
+					padding: 10px 0;
+					margin: 5px 20px;
+					width:calc(90%/3);
+					}
 			.pic img{
 				object-fit: contain;
 				width: 100%;
@@ -473,14 +559,35 @@ body {
 			max-width: 0;
 			padding:2px 0px 2px 2px;
 			}
-			table.admin_table p {
-				
-				
-				}
-
 
 		table.admin_table tr:nth-child(even) {	background: #c3c3c3;	}
 		table.admin_table tr:nth-child(odd) 	{	background: white;		}
+
+		table.user_table{
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+			font-size: 14px;
+			}	
+			table.user_table th {
+				font-weight: bold;
+				text-align: left;
+				padding-left:2px;
+				border: 2px solid #ffffff;
+				}
+			table.user_table tr,
+			table.user_table td {
+				border: 2px solid #ffffff;
+				vertical-align: middle;
+				text-align: left;
+				white-space: nowrap; 
+				overflow: hidden; 
+				text-overflow: ellipsis;
+				padding:2px 0px 2px 2px;
+				}
+	
+			table.user_table tr:nth-child(even) {	background: #c3c3c3;	}
+			table.user_table tr:nth-child(odd) 	{	background: white;		}
 	
 		.button{
 		width: 100%;	}
@@ -519,7 +626,7 @@ body {
 	.info{
 		width:calc(90%/2);	}
 
-	.items_info{
+	.item_info-items{
 		width:calc(90%/2);	}
 	
 	/*-- ハンバーガーボタンのスタイリング 
@@ -554,7 +661,7 @@ body {
             transition: .1s;
 			}
 		.navi {
-			top : 100%;
+			top : 70%;
 			border-bottom-right-radius: 10px;
   			border-bottom-left-radius: 10px;
 			padding: 10px 0;
@@ -585,24 +692,115 @@ body {
 }
 
 
-@media screen and (max-width:700px){
-	.header h1 {
-		font-size: 48px;	}
-	.footer_navi{
-		display: block;	}
-		.content h1{
-			border-bottom: 1px solid #ddd;	}
-	
-	
-}
+
 
 @media screen and (max-width:681px){
-	.info{
-		width:calc(90%/2);	}
+	.item_info-items{
+		width:calc(90%/1);	}
 	}
 
 @media screen and (max-width:480px){
 	.header h1 {
 		font-size: 32px;	}
-	
 	}
+
+@media screen and (max-width:375px){
+		.item_info-items{
+			width:calc(100%/1);	}
+		.header h1 {
+			font-size: 48px;	}
+		.footer_navi{
+			display: block;	}
+			.content h1{
+				border-bottom: 1px solid #ddd;	}
+		
+		.item_info{
+			margin: 5px 0;
+		}
+		
+/* (user)mypage */				
+		.back_top{
+			width: 55%;
+		}
+
+/* (user)contact */
+		.user_contact_form,
+		.user_contact_form_bl h1,
+		.user_contact_form_bl a{
+			width:100%;
+		}
+
+/* shop(user) */
+	.user_shop_map{
+		width:280px; 
+		height:300px;
+	}
+
+/* mypage(user) 会員情報更新*/
+.user_mypage_form{
+	width:100%; 
+}
+
+/*  mypage(user) 注文詳細*/
+.user_order_detail_address p{
+	 width:100%;
+}
+
+.user_order_detail_item_pic img{
+	margin: 0px 5px 0px 0;
+	width:40px; height:40px;
+}
+.user_order_detail_item_detail p{
+	margin: 0 5px;
+	font-size: 9px;
+	width:40%;
+}
+.user_order_main_block{
+	margin: 0 5px;
+	font-size:10px;
+}
+.form_bl a{
+	font-size:10px;
+}
+.block th,
+.block td{
+	font-size:10px;
+}
+
+.navi {
+	top:60%;
+	width: 120px;
+	}
+	.navi a{
+		line-height: 30px;}
+	.menu a{
+		font-size: 10px;
+		width: 100%;
+		}
+
+		.user_cart_delite_p{
+			 margin-right:0px; height:20%; margin:0 0;
+		}
+		.cart_button{
+			width:50px; bottom: -10%; right:-36%; position: relative;font-size: 8px;
+		}
+		.form_cart_button{
+			display:block; width:30%;
+		}
+		.user_cart_shipping_p{
+			font-size: 12px;
+		}
+
+		.submit,
+		.back_btn{
+			font-size: 1rem;
+		}
+
+		.item_detail_info{
+			display: block;
+			}
+			.item_detail_name{
+				font-size: 22px; 
+			}
+
+}

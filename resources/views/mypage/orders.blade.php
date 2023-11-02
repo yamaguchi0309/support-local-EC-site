@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CafeCafe</title>
+    <title>NagasakiSasebo</title>
     <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -17,7 +17,7 @@
     <!-- データベースに登録されている内容を表示 -->
     <div class="admin_main" style="width: 95%;" >
       <p class="page_title">注文履歴</p>
-      <div class="post">
+      <div class="post" style="overflow-x: scroll;">
         <table class="admin_table">
           <tr><th>注文番号</th><th>注文日</th><th>お支払い金額</th><th>お支払い方法</th><th>お支払い状況</th><th>注文状況</th><th>配送状況</th></tr>
           @foreach($order_data as $order)
@@ -55,7 +55,9 @@
             
             <!-- 配送状況 -->
             @php
-            if($order->shipping_status === "0"){
+            if($order->order_status === "2"){
+              $Shipping_status = "ー";
+            }elseif($order->shipping_status === "0"){
               $Shipping_status = "準備中";
             }elseif($order->shipping_status === "1"){
               $Shipping_status = "発送済";
@@ -74,7 +76,7 @@
             <td style="width:8%;">{{$Shipping_status}}</td>       									
         
             <!--  詳細ボタン -->
-            <td style="width:8%;"><form action="/mypage/orders/detail?id={{$order->id}}" method=post>
+            <td style="width:8%; min-width:50px;"><form action="/mypage/orders/detail?id={{$order->id}}" method=post>
             <input type=hidden name=id value="{{$order->id}}">
             <input type=submit class='button' value=詳細 style="width:100%;"> </form></td>
             </tr>
