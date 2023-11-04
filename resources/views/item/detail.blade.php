@@ -37,7 +37,7 @@
 
                   @else
                   <form action='/contact' method='get' class="button_cart" style="width:100%;">
-                  <input type=submit class='button' value='在庫切れ（問い合わせる）' style="background:yellow; border:1px solid #ffff00; border-radius:10px;"></form>
+                  <input type=submit class='button' value='在庫切れ（問い合わせる）' style="background:lightgray; border:1px solid gray; border-radius:10px;"></form>
                   @endif
                   
                   <form action='/items' class="button_cart" style="width:100%;">

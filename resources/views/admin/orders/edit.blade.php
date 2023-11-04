@@ -58,7 +58,7 @@
 
 
             <table class="admin_table" style="margin:10px 0;">
-            <tr style="background:#c3c3c3; border:2px solid #ffffff;"><th>orderID</th><th>userID</th><th>注文番号</th><th>注文日</th><th>お支払い金額</th><th>お支払い方法</th><th>お支払い状況</th><th>注文状況<br>1:受領済<br>2:取消済</th><th>配送状況<br>1:配送済<br>2:配達済</th><th>更新日</th></tr>
+            <tr style="background:#c3c3c3; border:2px solid #ffffff;"><th>orderID</th><th>userID</th><th>注文番号</th><th>注文日</th><th>お支払い金額</th><th>お支払い方法</th><th>お支払い状況</th><th>注文状況<br>1:受領済<br>2:取消済</th><th>配送状況<br>0:準備中<br>1:配送済<br>2:配達済<br>3:注文取消</th><th>更新日</th></tr>
             @foreach($order_data as $order)
             
             <!-- お支払い金額（金額＋送料） -->
@@ -95,13 +95,15 @@
             
             <!-- 配送状況 -->
             @php
-            if($order->shipping_status === "0"){
-              $Shipping_status = "準備中";
-            }elseif($order->shipping_status === "1"){
-              $Shipping_status = "発送済";
-            }elseif($order->shipping_status === "2"){
-              $Shipping_status = "配達済";
-            }
+              if($order->order_status === "2"){
+                $Shipping_status = "注文取消";
+              }elseif($order->shipping_status === "0"){
+                $Shipping_status = "準備中";
+              }elseif($order->shipping_status === "1"){
+                $Shipping_status = "発送済";
+              }elseif($order->shipping_status === "2"){
+                $Shipping_status = "配達済";
+              }
             @endphp
 
             <form action="{{ route('admin.orders.edit_update') }}" method="POST">

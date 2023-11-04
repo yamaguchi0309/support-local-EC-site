@@ -56,7 +56,7 @@
             <!-- 配送状況 -->
             @php
             if($order->order_status === "2"){
-              $Shipping_status = "ー";
+              $Shipping_status = "注文取消";
             }elseif($order->shipping_status === "0"){
               $Shipping_status = "準備中";
             }elseif($order->shipping_status === "1"){

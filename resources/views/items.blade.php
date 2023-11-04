@@ -61,7 +61,7 @@
             <input type=submit class='button' value='カートに入れる' style="display:block;margin: 0px auto;width:80%;background:yellow;border:1px solid #ffff00; border-radius:10px;"></form>
             @else
             <form action='/contact' method='get'  class='button_cart'>
-            <input type=submit class='button' value='在庫切れ（問い合わせる）' style="display:block;margin: 0px auto;background:yellow; border:1px solid #ffff00; border-radius:10px;"></form>
+            <input type=submit class='button' value='在庫切れ（問い合わせる）' style="display:block;margin: 0px auto;background:lightgray; border:1px solid gray; border-radius:10px;"></form>
             @endif
           </div>  
         @endforeach

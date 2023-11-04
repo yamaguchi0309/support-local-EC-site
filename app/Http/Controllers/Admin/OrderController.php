@@ -91,7 +91,7 @@ class OrderController extends Controller
         $shipping_data = $request->post();
         $shipping_data = $request->validate([
             'Order_status' => 'required|regex:/^[0-2]+$/',
-            'Shipping_status' => 'required|regex:/^[0-2]+$/',
+            'Shipping_status' => 'required|regex:/^[0-3]+$/',
             'Tel' => 'required|regex:/^0[0-9]{10,11}$/',
             'Postcode' => 'required|digits:7',
             'Address' => 'required',

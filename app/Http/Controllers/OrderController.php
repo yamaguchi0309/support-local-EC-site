@@ -43,7 +43,7 @@ class OrderController extends Controller
     {    
        DB::table('orders')->where('id','=',$request->id)->update([
                 'order_status' => '2',
-                'shipping_status' => '-',
+                'shipping_status' => '3',
             ]);
         return view('mypage.orders.cancel_complete');  
     }

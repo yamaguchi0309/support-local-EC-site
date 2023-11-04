@@ -33,7 +33,7 @@
     </header>
     </body>
 
-    <div class="concept" style="position:absolute; height:500px; top:200px; right:150px; -ms-writing-mode: tb-rl;writing-mode: vertical-rl;">
+    <div class="concept" style="position:absolute; height:500px; top:160px; right:150px; -ms-writing-mode: tb-rl;writing-mode: vertical-rl;">
         <h1>魅力溢れる本土最西端の地</h1>
         <p>漁獲量全国二位は魚の美味しさの証</p>
         <p>肉牛の部で内閣総理大臣賞を受賞</p>

@@ -25,7 +25,7 @@ class ItemController extends Controller
              ->where('name', 'LIKE', "%{$keyword}%")
              ->orwhere('description', 'LIKE', "%{$keyword}%")
              ->orwhere('item_img', 'LIKE', "%{$keyword}%")
-             ->orwhere('name', 'LIKE', "%{$keyword}%")->paginate(6);
+             ->orwhere('memo', 'LIKE', "%{$keyword}%")->paginate(6);
 
         }
         return view('items', compact('item_data','keyword'));
