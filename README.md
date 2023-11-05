@@ -1,10 +1,14 @@
 # 地元産業を応援するECサイト
 PHP自作
 
+![サイトイメージ](https://github.com/yamaguchi0309/yamaguchi_masakazu/assets/149088997/84cac5ac-cf19-4788-9e0a-b82080400488)
+
+
 ## 概要
 長崎県の特産品を購入できるECサイトを作成しました。
 
-管理者ユーザと会員ユーザに分け、sそれぞれでログインできるようにしています。
+管理者ユーザと会員ユーザに分け、それぞれでログインできるようにしています。
+
 
 ## 使い方
 ■管理者ユーザ
@@ -15,15 +19,11 @@ PHP自作
 
 会員情報、お問い合わせへのコメント記載ができるようにしています。
 
-<テストアカウント>
+・テストアカウント
 
-・メールアドレス
+メールアドレス：admintest@gmail.com
 
-admintest@gmail.com
-
-・パスワード
-
-admintest
+パスワード：admintest
 
 
 ■一般ユーザ
@@ -34,15 +34,12 @@ admintest
 
 お問い合わせができるようになってります。
 
-<テストアカウント>
+・テストアカウント
 
-・メールアドレス
+メールアドレス：usertest@gmail.com
 
-usertest@gmail.com
+パスワード：usertest
 
-・パスワード
-
-usertest
 
 ## 環境
 MAMP/MySQL/PHP
