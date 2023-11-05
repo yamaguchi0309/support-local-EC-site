@@ -1,7 +1,7 @@
 # 地元産業を応援するECサイト
 PHP自作
 
-![サイトイメージ](https://github.com/yamaguchi0309/yamaguchi_masakazu/assets/149088997/84cac5ac-cf19-4788-9e0a-b82080400488)
+![サイトイメージ328_360](https://github.com/yamaguchi0309/yamaguchi_masakazu/assets/149088997/93c9f6f2-1ca0-4f53-af40-c5fd5f719d63)
 
 
 ## 概要
